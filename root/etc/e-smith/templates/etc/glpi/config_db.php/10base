@@ -1,0 +1,13 @@
+<?php
+ class DB extends DBmysql {
+                
+ var $dbhost = 'localhost';
+                
+ var $dbuser 	= 'glpi';
+                
+ var $dbpassword= '{NethServer::Password::store('glpi');}';
+                
+ var $dbdefault	= 'glpi';
+                
+ } 
+?>
