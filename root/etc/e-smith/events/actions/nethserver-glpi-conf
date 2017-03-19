@@ -20,7 +20,7 @@
 use strict;
 use NethServer::Password;
 
-#unlink '/usr/share/glpi/install/install.php';
+unlink '/usr/share/glpi/install/install.php';
 
 # check if glpi db exists
 if ( -d '/var/lib/mysql/glpi' ) {
@@ -29,6 +29,7 @@ if ( -d '/var/lib/mysql/glpi' ) {
 
 # generate random db pass
 my $db_pass = NethServer::Password::store('glpi');
+my @file = glob "/usr/share/glpi/install/mysql/glpi-*-empty.sql";
 
 open(my $fh, '|-', '/usr/bin/mysql -B') || die("[ERROR] Could not open mysql process");
 print $fh qq(
@@ -36,7 +37,7 @@ create database glpi;
 grant all privileges on glpi.* to 'glpi'\@'localhost' identified by '$db_pass';
 flush privileges;
 use glpi
-\\. /usr/share/glpi/install/mysql/glpi-*-empty.sql
+source $file[0]
 );
 close ($fh) || die("[ERROR] glpi inventory DB initialization FAILED");
 

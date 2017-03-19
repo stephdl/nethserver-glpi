@@ -1,13 +1,20 @@
-<?php
+{
+use strict;
+use NethServer::Password;
+my $db_pass = NethServer::Password::store('glpi');
+
+$OUT .= qq(
  class DB extends DBmysql {
                 
- var $dbhost = 'localhost';
+ var \$dbhost = 'localhost';
                 
- var $dbuser 	= 'glpi';
+ var \$dbuser 	= 'glpi';
                 
- var $dbpassword= '{NethServer::Password::store('glpi');}';
+ var \$dbpassword= '$db_pass';
                 
- var $dbdefault	= 'glpi';
+ var \$dbdefault = 'glpi';
                 
  } 
 ?>
+);
+}

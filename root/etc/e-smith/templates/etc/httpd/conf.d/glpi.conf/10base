@@ -79,7 +79,5 @@ Alias /$name /usr/share/glpi
 #  DocumentRoot /usr/share/glpi
 #  ServerName glpi.example.com
 #</VirtualHost>
-
-</Directory>
 EOF
 }

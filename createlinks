@@ -25,7 +25,7 @@ event_templates('nethserver-glpi-update', qw(
     /etc/httpd/conf.d/default-virtualhost.inc
 ));
 
-event_actions('nethserver-ocsinventory-update', qw(
+event_actions('nethserver-glpi-update', qw(
   initialize-default-databases 00
    nethserver-glpi-conf 40
 ));

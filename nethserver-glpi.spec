@@ -1,5 +1,5 @@
 Name: nethserver-glpi
-Version: 1.1.3
+Version: 0.1.1
 Release: 1%{?dist}
 Summary: Configure glpi
 Source: %{name}-%{version}.tar.gz
@@ -36,14 +36,6 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
-* Sat Mar 18 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 1.1.3.ns7
+* Sun Mar 19 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.1.ns7
 - First release to NS7
 
-* Mon Sep 14 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.1-1
-- OCS Inventory LDAP authentication - Enhancement #3250 [NethServer]
-
-* Tue Aug 25 2015 Davide Principi <davide.principi@nethesis.it> - 1.0.0-1
-- Initial OCS Inventory NG package - Feature #3230 [NethServer]
-
-* Wed Jul 22 2015 Giovanni Bezicheri <giovanni.bezicheri@nethesis.it>
-- Initial version
