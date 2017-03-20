@@ -1,5 +1,5 @@
 Name: nethserver-glpi
-Version: 0.1.1
+Version: 0.1.2
 Release: 1%{?dist}
 Summary: Configure glpi
 Source: %{name}-%{version}.tar.gz
@@ -36,6 +36,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
-* Sun Mar 19 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.1.ns7
+* Mon Mar 20 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.2-1.ns7
+- Redirect the cron job email to /dev/null
+
+* Sun Mar 19 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.1-1.ns7
 - First release to NS7
 

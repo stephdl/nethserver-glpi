@@ -23,6 +23,7 @@ event_templates('nethserver-glpi-update', qw(
     /etc/httpd/conf.d/glpi.conf
     /etc/glpi/config_db.php
     /etc/httpd/conf.d/default-virtualhost.inc
+    /etc/cron.d/glpi
 ));
 
 event_actions('nethserver-glpi-update', qw(

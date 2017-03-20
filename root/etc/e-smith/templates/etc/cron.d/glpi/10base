@@ -1,0 +1,3 @@
+# GLPI core
+# Run cron to execute task even when no user connected
+* * * * * apache /usr/bin/php /usr/share/glpi/front/cron.php &>/dev/null
