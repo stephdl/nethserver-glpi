@@ -32,5 +32,9 @@ event_actions('nethserver-glpi-update', qw(
 ));
 
 event_services('nethserver-glpi-update', qw(
-   httpd restart
+   httpd reload
 ));
+
+my $event = 'trusted-networks-modify';
+templates2events("/etc/httpd/conf.d/glpi.conf", $event);
+

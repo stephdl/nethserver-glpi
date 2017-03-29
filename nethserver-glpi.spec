@@ -1,5 +1,5 @@
 Name: nethserver-glpi
-Version: 0.1.2
+Version: 0.1.3
 Release: 1%{?dist}
 Summary: Configure glpi
 Source: %{name}-%{version}.tar.gz
@@ -36,6 +36,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed Mar 29 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.3-1.ns7
+- Template expansion on trusted-network
+
 * Mon Mar 20 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.2-1.ns7
 - Redirect the cron job email to /dev/null
 
