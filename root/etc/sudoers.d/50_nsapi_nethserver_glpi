@@ -1,0 +1,8 @@
+
+#
+# nsapi_nethserver_glpi
+#
+Cmnd_Alias NSAPI_NETHSERVER_GLPI = \
+     /usr/libexec/nethserver/api/nethserver-glpi/read
+
+Defaults!NSAPI_NETHSERVER_GLPI !requiretty
