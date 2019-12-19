@@ -1,5 +1,5 @@
 Name: nethserver-glpi
-Version: 0.1.4
+Version: 1.0.0
 Release: 1%{?dist}
 Summary: Configure glpi
 Source: %{name}-%{version}.tar.gz
@@ -47,6 +47,9 @@ cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Thu Dec 19 2019 Stephane de Labrusse <stephdl@de-labrusse.fr> 1.0.0-1.NS7
+- Link in the cockpit application Page
+
 * Sun Sep 10 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.4-1.ns7
 - Restart httpd service on trusted-network
 
