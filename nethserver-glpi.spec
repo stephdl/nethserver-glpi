@@ -1,5 +1,5 @@
 Name: nethserver-glpi
-Version: 1.0.0
+Version: 1.0.1
 Release: 1%{?dist}
 Summary: Configure glpi
 Source: %{name}-%{version}.tar.gz
@@ -45,8 +45,12 @@ cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
 %defattr(-,root,root)
 %doc COPYING
 %dir %{_nseventsdir}/%{name}-update
+%attr(0440,root,root) /etc/sudoers.d/50_nsapi_nethserver_glpi
 
 %changelog
+* Thu Mar 05 2020  stephane de Labrusse <stephdl@de-labrusse.fr> 1.0.1-1.ns7
+- Fix bad sudoers permission
+
 * Thu Dec 19 2019 Stephane de Labrusse <stephdl@de-labrusse.fr> 1.0.0-1.NS7
 - Link in the cockpit application Page
 
@@ -61,4 +65,3 @@ cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
 
 * Sun Mar 19 2017 stephane de Labrusse <stephdl@de-labrusse.fr> 0.1.1-1.ns7
 - First release to NS7
-
