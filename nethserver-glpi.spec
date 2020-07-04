@@ -1,5 +1,5 @@
 Name: nethserver-glpi
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{?dist}
 Summary: Configure glpi
 Source: %{name}-%{version}.tar.gz
@@ -47,7 +47,14 @@ cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
 %dir %{_nseventsdir}/%{name}-update
 %attr(0440,root,root) /etc/sudoers.d/50_nsapi_nethserver_glpi
 
+%postun
+/usr/bin/rm -f /etc/httpd/conf.d/glpi.conf
+/usr/bin/systemctl reload httpd
+
 %changelog
+* Sat Jul 04 2020 stephane de Labrusse <stephdl@de-labrusse.fr> 1.0.2-1
+- Remove http templates after rpm removal
+
 * Thu Mar 05 2020  stephane de Labrusse <stephdl@de-labrusse.fr> 1.0.1-1.ns7
 - Fix bad sudoers permission
 
