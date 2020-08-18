@@ -1,6 +1,6 @@
 Name: nethserver-glpi
 Version: 1.0.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Configure glpi
 Source: %{name}-%{version}.tar.gz
 BuildArch: noarch
@@ -48,8 +48,10 @@ cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
 %attr(0440,root,root) /etc/sudoers.d/50_nsapi_nethserver_glpi
 
 %postun
-/usr/bin/rm -f /etc/httpd/conf.d/glpi.conf
-/usr/bin/systemctl reload httpd
+if [ $1 == 0 ] ; then
+    /usr/bin/rm -f /etc/httpd/conf.d/glpi.conf
+    /usr/bin/systemctl reload httpd
+fi
 
 %changelog
 * Sat Jul 04 2020 stephane de Labrusse <stephdl@de-labrusse.fr> 1.0.2-1
