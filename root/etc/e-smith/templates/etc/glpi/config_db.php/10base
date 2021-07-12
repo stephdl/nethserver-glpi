@@ -15,6 +15,5 @@ $OUT .= qq(
  var \$dbdefault = 'glpi';
                 
  } 
-?>
-);
+?>);
 }
