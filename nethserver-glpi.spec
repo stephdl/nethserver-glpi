@@ -1,5 +1,5 @@
 Name: nethserver-glpi
-Version: 1.0.2
+Version: 1.0.3
 Release: 2%{?dist}
 Summary: Configure glpi
 Source: %{name}-%{version}.tar.gz
@@ -54,6 +54,11 @@ if [ $1 == 0 ] ; then
 fi
 
 %changelog
+* Fri Jul 30 2021 stephane de Labrusse <stephdl@de-labrusse.fr> 1.0.3-1
+- Fix blank line in config_db.php  
+- https://github.com/stephdl/nethserver-glpi/pull/2
+- code from mrmarkus
+
 * Sat Jul 04 2020 stephane de Labrusse <stephdl@de-labrusse.fr> 1.0.2-1
 - Remove http templates after rpm removal
 
